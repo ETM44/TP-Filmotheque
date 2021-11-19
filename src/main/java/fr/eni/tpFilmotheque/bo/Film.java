@@ -65,6 +65,14 @@ public class Film {
 		this.realisateur = realisateur;
 	}
 
+	public ArrayList<Personne> getActeur() {
+		return acteur;
+	}
+
+	public void setActeur(ArrayList<Personne> acteur) {
+		this.acteur = acteur;
+	}
+
 	public void addActeur(Personne personne) {
 		this.acteur.add(personne);
 	}

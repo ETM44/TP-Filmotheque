@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Liste de film</h2>
+
+	<table>
+		<tr th:each="film: ${filmModel.films}">
+			<td th:text="${film.titre}" />
+		</tr>
+	</table>
+</body>
+</html>

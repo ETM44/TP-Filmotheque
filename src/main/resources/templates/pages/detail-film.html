@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello World !</h1>
+	<h2>Détail du film</h2>
+
+	<p th:text="${filmModel.film.titre}"></p>
+	<p th:text="${filmModel.film.anneeDeSortie}"></p>
+	<p th:text="${filmModel.film.duree}"></p>
+	<p th:text="${filmModel.film.genre.genre}"></p>
+	<p th:text="${filmModel.film.realisateur.nom}"></p>
+	<table>
+		<tr th:each="acteur: ${filmModel.film.acteur}">
+			<td th:text="${acteur.nom}" />
+		</tr>
+	</table>
 </body>
 </html>
