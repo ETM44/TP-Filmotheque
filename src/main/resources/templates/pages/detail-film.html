@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8"/>
+<title>detail Film</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-	<h2>Détail du film</h2>
-
-	<p th:text="${filmModel.film.titre}"></p>
-	<p th:text="${filmModel.film.anneeDeSortie}"></p>
-	<p th:text="${filmModel.film.duree}"></p>
-	<p th:text="${filmModel.film.genre.genre}"></p>
-	<p th:text="${filmModel.film.realisateur.nom}"></p>
-	<table>
-		<tr th:each="acteur: ${filmModel.film.acteur}">
-			<td th:text="${acteur.nom}" />
+<div class="container">
+<h1 class="jumbotron">Détail du film</h1>
+	<table class="table table-striped">
+		
+		<tr>
+		<th>titre</th>
+		<th>anneeDeSortie</th>
+		<th>duree</th>
+		<th>genre</th>
+		<th>realisateur</th>
+		<th>Acteurs</th>
 		</tr>
+		<tr th:each="acteur: ${filmModel.film.acteur}">
+		<td th:text="${filmModel.film.titre}"/>
+		<td th:text="${filmModel.film.anneeDeSortie}">
+		<td th:text="${filmModel.film.duree}">
+		<td th:text="${filmModel.film.genre.genre}">
+		<td th:text="${filmModel.film.realisateur.nom}">
+		<td th:text="${acteur.nom}" />	
+			
 	</table>
+	
+	<table class="table table-striped">
+		<tr>
+			<th>Acteurs</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+		</tr>
+		<tr></tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</table>
+	</div>
+	
 </body>
 </html>
