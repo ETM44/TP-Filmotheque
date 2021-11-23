@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Ajouter un film</h2>
+	
+	<form method="post" th:object=${film} th:action="@{/film/ajout}" >
+		<label for="titreInput" >Titre:</label>
+		<input id="titreInput" type="text" th:field="*{titre}" autofocus/>
+		<br/>
+		<label for="anneeDeSortieInput" >Date de sortie:</label>
+		<input id="anneeDeSortieInput" type="date" th:field="*{anneeDeSortie}"/>
+		<br/>
+		<label for="dureeInput" >Duree:</label>
+		<input id="dureeInput" type="number" th:field="*{duree}"/>
+		<br/>
+		<input type="submit" value="Valider" />
+	</form>
+	
+</body>
+</html>
