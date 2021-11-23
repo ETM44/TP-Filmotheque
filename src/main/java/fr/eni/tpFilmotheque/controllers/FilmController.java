@@ -1,11 +1,12 @@
 package fr.eni.tpFilmotheque.controllers;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
+import java.util.Date;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.eni.tpFilmotheque.bo.Film;
@@ -39,6 +40,22 @@ public class FilmController {
 		filmModel.setFilms(listeFilmService.listeFilms());			
 		
 		return "pages/liste-film";
+	}
+	
+	@GetMapping({"/ajout"})
+	public String afficherFormulaireFilm(Model model) {
+		
+		model.addAttribute("film", new Film("",new Date(),90,new Genre(),new Personne()));
+		
+		return "pages/ajout-film";
+	}
+	
+	@PostMapping({"/ajout"})
+	public String ajoutFilm(@ModelAttribute("film") Film film) {
+		
+		System.out.println(film);
+		
+		return "redirect:/film/liste";
 	}
 	
 }
