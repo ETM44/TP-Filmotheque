@@ -20,10 +20,10 @@ public class Personne implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, unique = true, length = 50)
+	@Column(nullable = false, length = 50)
 	private String nom;
 	
-	@Column(nullable = false, unique = true, length = 50)
+	@Column(nullable = false, length = 50)
 	private String prenom;
 //	private ArrayList<Film> filmRealise = new ArrayList<Film>();
 //	private ArrayList<Film> filmJoue = new ArrayList<Film>();
@@ -54,7 +54,7 @@ public class Personne implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + ", prenom=" + prenom + "]";
+		return "Personne [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 	
 //	public void addFilmRealise(Film film) {
