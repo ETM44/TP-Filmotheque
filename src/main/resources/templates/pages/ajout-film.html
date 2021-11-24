@@ -2,23 +2,76 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Ajout Film</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
 	<h2>Ajouter un film</h2>
+	<br><br>
+  	<form method="post" th:object=${film} th:action="@{/film/ajout}" >
 	
-	<form method="post" th:object=${film} th:action="@{/film/ajout}" >
-		<label for="titreInput" >Titre:</label>
-		<input id="titreInput" type="text" th:field="*{titre}" autofocus/>
-		<br/>
-		<label for="anneeDeSortieInput" >Date de sortie:</label>
-		<input id="anneeDeSortieInput" type="date" th:field="*{anneeDeSortie}"/>
-		<br/>
-		<label for="dureeInput" >Duree:</label>
-		<input id="dureeInput" type="number" th:field="*{duree}"/>
-		<br/>
-		<input type="submit" value="Valider" />
+	<div class="form-group row">
+      		<label for="inputTitre" class="col-sm-2 col-form-label">Titre</label>
+    			<div class="col-sm-10">
+      				<input type="text" th:field="*{titre}" class="form-control" id="inputTitre" placeholder="Titre du film" autofocus>
+      			</div>
+    	</div>
+    	<div class="form-group row">
+      <label for="inputAnnee" class="col-sm-2 col-form-label">Date de sortie:</label>
+    	  <div class="col-sm-10">
+   			  <input type="date" th:field="*{anneeDeSortie}" class="form-control" id="inputAnnee" placeholder="Annee de sortie">
+    	</div>
+    </div>
+		
+		    <div class="form-group row">
+      <label for="inputGenre" class="col-sm-2 col-form-label">Genre :</label>
+      	<div class="col-sm-10">
+      		<select name="inputGenre" th:field="*{genre}" id="inputGenre" class="form-control">
+				
+					<option value="${g.id}"></option>
+				
+			</select>		
+      	</div>
+      
+    </div>
+    
+    <div class="form-group row">
+      <label for="inputDuree" class="col-sm-2 col-form-label">Durée :</label>
+     	 <div class="col-sm-10">
+      		<input type="number"  th:field="*{duree}" class="form-control" id="inputDuree" placeholder="Duree en minuit">
+      	</div>
+    </div>
+    
+     <div class="form-group row">			
+		<label for="real.prenom" class="col-sm-2 control-label">Réalisateur :</label>
+			<div class="col-sm-5">
+				<input id="real.prenom"  name="real.prenom"  placeholder="Prénom ..."  class="form-control" /> 
+			</div>
+			<div class="col-sm-5">
+				<input id="real.nom" name="real.nom"  placeholder="Nom ..."  class="form-control" /> 
+			</div>
+	</div>
+		
+	<div class="form-group row">
+    	<label for="inputNom" class="col-sm-2 control-label">Acteur : </label>
+      		<div class="col-sm-5">
+      			<input type="text" class="form-control" id="nom" placeholder="nom">
+   			</div>
+    		<div class="col-sm-5">
+      			<input type="text" class="form-control" id="prenom" placeholder="prenom">
+    		</div>
+    
+	<div class="form-group" >
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary">Envoyer</button>			
+		</div>
+	</div>
+	</div>	
 	</form>
-	
+</div>	
 </body>
 </html>
+
+
+ 
