@@ -3,14 +3,17 @@ package fr.eni.tpFilmotheque.services;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import fr.eni.tpFilmotheque.bo.Film;
 import fr.eni.tpFilmotheque.bo.Genre;
 import fr.eni.tpFilmotheque.bo.Personne;
 
+@Profile( "Impl")
 @Service
 public class ListeFilmServiceImpl implements ListeFilmService {
 
@@ -33,7 +36,7 @@ public class ListeFilmServiceImpl implements ListeFilmService {
 	}
 
 	@Override
-	public ArrayList<Film> listeFilms() {
+	public List<Film> listeFilms() {
 		return this.films;
 	}
 

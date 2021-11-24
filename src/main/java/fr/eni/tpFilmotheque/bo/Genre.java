@@ -41,6 +41,11 @@ public class Genre implements Serializable {
 		this.genre = genre;
 	}
 
+	@Override
+	public String toString() {
+		return "Genre [id=" + id + ", genre=" + genre + "]";
+	}
+
 //	public void addFilm(Film film) {
 //		this.film.add(film);
 //	}
@@ -49,9 +54,6 @@ public class Genre implements Serializable {
 //		this.film.remove(film);
 //	}
 	
-	@Override
-	public String toString() {
-		return "Genre [genre=" + genre + "]";
-	}	
+		
 	
 }

@@ -1,13 +1,14 @@
 package fr.eni.tpFilmotheque.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.eni.tpFilmotheque.bo.Film;
 
 public class FilmModel {
 
 	private Film film;
-	private ArrayList<Film> films = new ArrayList<Film>();
+	private List<Film> films = new ArrayList<Film>();
 
 	public FilmModel() {
 		super();
@@ -21,11 +22,11 @@ public class FilmModel {
 		this.film = film;
 	}
 
-	public ArrayList<Film> getFilms() {
+	public List<Film> getFilms() {
 		return films;
 	}
 
-	public void setFilms(ArrayList<Film> films) {
+	public void setFilms(List<Film> films) {
 		this.films = films;
 	}
 	

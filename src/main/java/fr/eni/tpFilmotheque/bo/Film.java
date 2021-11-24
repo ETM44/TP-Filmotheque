@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -47,7 +45,7 @@ public class Film implements Serializable {
 	@ManyToOne()
 	private Personne realisateur;
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER) 
+	@ManyToMany(fetch = FetchType.EAGER) 
 	@JoinTable(name="acteur", 
 	           joinColumns= {@JoinColumn(name="film_id")},
 	           inverseJoinColumns= {@JoinColumn(name="personne_id")}
